@@ -20,6 +20,13 @@ public class Main {
             inputs.add(userInput);
             userInput = sc.nextLine();
         }
+        System.out.println("Enter require words (terminate input by entering empty line)");
+        String inputRequireWord = sc.nextLine();
+        RequireWords requireWords=new RequireWords();
+        while(!inputRequireWord.isEmpty()){
+        requireWords.addWordToList(inputRequireWord);
+        inputRequireWord =sc.nextLine();
+        }
 
         System.out.println("Enter words to ignore (terminate input by entering empty line) ");
         String inputWordToIgnore = sc.nextLine();
@@ -34,11 +41,12 @@ public class Main {
             CircularShift shifter = new CircularShift(str);
             alphabetizer.addLines(shifter.getCircularShifts());
         }
-
+        
         String[] result = alphabetizer.getSortedLines();
+        ArrayList<String> output=requireWords.CheckRequireWords(result);
         StringBuilder builder = new StringBuilder();
         String separator = System.lineSeparator();
-        for (String str : result) {
+        for (String str : output) {
             builder.append(str).append(separator);
         }
         System.out.print(builder.toString());
