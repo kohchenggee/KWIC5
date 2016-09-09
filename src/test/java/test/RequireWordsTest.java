@@ -14,12 +14,13 @@ public class RequireWordsTest {
 	public void test() {
 		RequireWords requireWords=new RequireWords();
 		String[] lines = {"test a line", "a simple line", "this is test", "easy task"};
-		for (String str : lines) {
+		String[] test ={"this"};
+		for (String str : test) {
             requireWords.addWordToList(str);
         }
 		
-		String[] test ={"this"};
-		ArrayList<String> output= requireWords.CheckRequireWords(test);
+		
+		ArrayList<String> output= requireWords.CheckRequireWords(lines);
 		assertEquals(1, requireWords.getSize());
 	}
 
