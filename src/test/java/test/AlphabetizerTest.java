@@ -15,7 +15,7 @@ public class AlphabetizerTest {
         alphabetizer.addLines(lines);
         String[] output = alphabetizer.getSortedLines();
         assertTrue(output.length == 4);
-        assertEquals("a simple line", output[0]);
+        assertEquals("a simpline", output[0]);
         assertEquals("easy task", output[1]);
         assertEquals("test a line", output[2]);
         assertEquals("this is test", output[3]);
